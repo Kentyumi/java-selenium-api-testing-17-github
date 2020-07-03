@@ -40,11 +40,9 @@ public void TC_03_LoginFormDisplayed() {
 // Login form displayed
 Assert.assertTrue(driver.findElement(By.xpath("//form[@name='frmLogin']")).isDisplayed());
 }
- 
-@AfterClass
+
 public void afterClass() {
 driver.quit();
-System.out.println("làm xong rồi");
 }
  
 }
