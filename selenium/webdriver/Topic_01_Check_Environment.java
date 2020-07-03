@@ -13,14 +13,14 @@ import org.testng.annotations.Test;
 public class Topic_01_Check_Environment {
 WebDriver driver;
  
-@BeforeClass
+@BeforeClass//kakaka
 public void beforeClass() {
 driver = new FirefoxDriver();
 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 driver.manage().window().maximize();
 driver.get("http://demo.guru99.com/v4/");
 }
- 
+ //xem nè
 @Test
 public void TC_01_ValidateCurrentUrl() {
 // Login Page Url matching
@@ -44,6 +44,7 @@ Assert.assertTrue(driver.findElement(By.xpath("//form[@name='frmLogin']")).isDis
 @AfterClass
 public void afterClass() {
 driver.quit();
+System.out.println("làm xong rồi");
 }
  
 }
