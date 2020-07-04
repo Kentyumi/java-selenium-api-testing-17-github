@@ -44,6 +44,7 @@ Assert.assertTrue(driver.findElement(By.xpath("//form[@name='frmLogin']")).isDis
 @AfterClass
 public void afterClass() {
 driver.quit();
+System.out.println("edit_topic_01");
 }
  
 }
