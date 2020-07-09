@@ -53,9 +53,9 @@ public class Topic_05_Xpath_Css_locater {
     @Test	
     
 	public void TC_02_Class() throws InterruptedException {
-    	driver.findElement(By.className("input-text required-entry validate-password")).sendKeys("552912");
+    	driver.findElement(By.className("validate-password")).sendKeys("552912");
     	Thread.sleep(2000);
-    	driver.findElement(By.className("input-text required-entry validate-password")).clear();
+    	driver.findElement(By.className("validate-password")).clear();
 	
 }
    
@@ -85,14 +85,57 @@ public class Topic_05_Xpath_Css_locater {
 }
     @Test
 	public void TC_07_Css() throws InterruptedException {
+    	//ID
+    	driver.findElement(By.cssSelector("#name")).sendKeys("Css");
     	Thread.sleep(2000);
+    	//Class
+    	driver.findElement(By.cssSelector(".fieldset")).isDisplayed();
+    	Thread.sleep(2000);
+    	//Name
+    	driver.findElement(By.cssSelector("input[name='description']")).sendKeys("NameCss");
+    	Thread.sleep(2000);
+    	//Link Text
+    	driver.findElement(By.cssSelector("a[href='http://live.demoguru99.com/index.php/mobile.html']")).click();
+    	Thread.sleep(2000);
+    	//partial Link Text
+    	driver.findElement(By.cssSelector("a[href*='/mobile.html']")).click();
+    	Thread.sleep(2000);
+    	//Tag name
+    	int Linksize = driver.findElements(By.cssSelector("a")).size();
+    	System.out.println("Css Tagname = " + Linksize);	
+    	Thread.sleep(2000);
+    	
 }
     	
     @Test
-  	public void TC_08_Xpath() throws InterruptedException {
+  	public void TC_08_Xpath() throws InterruptedException {	
+    	//mở lại trang my account
+    	driver.get("http://live.demoguru99.com/index.php/customer/account/login/");
     	Thread.sleep(2000);
-  }
-    
+    	//ID
+    	driver.findElement(By.xpath("//input[@id='email']")).sendKeys("xpath_id@gmail.com");
+    	driver.findElement(By.xpath("//input[@id='email']")).clear();
+    	Thread.sleep(2000);
+    	//Class
+    	driver.findElement(By.xpath("//input[@class='input-text required-entry validate-email']")).sendKeys("Xpath_class@gmail.com");
+    	Thread.sleep(2000);
+    	//name
+    	driver.findElement(By.xpath("//input[@name='email']")).sendKeys("xpath_name@gmail.com");
+    	Thread.sleep(2000);
+    	//Link Text
+    	driver.findElement(By.xpath("//a[text()='About Us']")).click();
+    	Thread.sleep(2000);
+    	//Partial Link Text	
+    	driver.findElement(By.xpath("//a[contains(text(),'Customer')]")).click();
+    	Thread.sleep(2000);	
+    	//Tag name
+        	System.out.println(driver.findElements(By.xpath("//a")).size());
+    	Thread.sleep(2000);
+    	//Css
+    	driver.findElement(By.xpath("//input[@title='Sign up for our newsletter']")).sendKeys("xpath_css@gmail.com");
+    	Thread.sleep(2000); 
+    }
+        	
     @AfterClass//Post-codition
     public void afterClass() {
     driver.quit();
