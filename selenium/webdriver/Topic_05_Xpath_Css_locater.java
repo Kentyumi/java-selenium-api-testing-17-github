@@ -46,6 +46,7 @@ public class Topic_05_Xpath_Css_locater {
     //Tương tác với element email thông qua locater ID
 		driver.findElement(By.id("email")).sendKeys("id@gmail.com");
 		Thread.sleep(2000);
+		//Xóa dữ liệu cho các element có thể nhập được(Textbox/dropdown/Textarea/..)
 		driver.findElement(By.id("email")).clear();
     }
 
@@ -54,6 +55,7 @@ public class Topic_05_Xpath_Css_locater {
 	public void TC_02_Class() throws InterruptedException {
     	driver.findElement(By.className("input-text required-entry validate-password")).sendKeys("552912");
     	Thread.sleep(2000);
+    	driver.findElement(By.className("input-text required-entry validate-password")).clear();
 	
 }
    
@@ -61,17 +63,24 @@ public class Topic_05_Xpath_Css_locater {
 	public void TC_03_Name() throws InterruptedException {
     	driver.findElement(By.name("login[username]")).sendKeys("kentyumi");
     	Thread.sleep(2000);
+    	driver.findElement(By.name("login[username]")).clear();
 }
     @Test
 	public void TC_04_Tagname() throws InterruptedException {
+    	//Tim ra tất cả những đường link (thẻ a)
+    	int Linknumber = driver.findElements(By.tagName("a")).size();
+    	System.out.println("Sum link = " + Linknumber);
     	Thread.sleep(2000);
 }
-    @Test
+    @Test//Nó chỉ work với link: Link cố định tuyệt đối
 	public void TC_05_Link_Text() throws InterruptedException {
+    	//Click vào site map link
+    	driver.findElement(By.linkText("SITE MAP")).click();
     	Thread.sleep(2000);
 }
-    @Test
+    @Test//Nó chỉ work với link: Text tương đối
 	public void TC_06_Partial_Link_Text() throws InterruptedException {
+    	driver.findElement(By.partialLinkText("ADVANCE")).click();	
     	Thread.sleep(2000);
 }
     @Test
