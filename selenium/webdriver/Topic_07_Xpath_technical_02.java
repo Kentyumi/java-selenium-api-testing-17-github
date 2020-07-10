@@ -39,6 +39,18 @@ public class Topic_07_Xpath_technical_02 {
 	
 	}
 	
+
+	@Test
+	public void TC_03_Xpath() throws InterruptedException {	
+	//Kỹ thuật Xpath Axes
+		
+    driver.get("http://live.demoguru99.com/index.php/mobile.html");
+    Thread.sleep(2000);
+    //Click vào đúng button của Iphone Add to cart
+    driver.findElement(By.xpath("//a[@title='IPhone']/parent::h2/following-sibling::div[@class='actions']//button")).click();
+	
+	}
+	
 	@AfterClass//Post-codition
     public void afterClass() {
     driver.quit();
