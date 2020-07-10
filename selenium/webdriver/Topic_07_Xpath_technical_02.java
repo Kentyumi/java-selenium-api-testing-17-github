@@ -23,32 +23,25 @@ public class Topic_07_Xpath_technical_02 {
 	
 	@Test
 	public void TC_01_Xpath() throws InterruptedException {	
-	
 	//Click vao Myaccount
 	//Case này sẽ failed vì định danh có 2 matching nodes
     driver.findElement(By.xpath("a[@title='My Account']")).click();
-	
 	}
 	
 	@Test
 	public void TC_02_Xpath() throws InterruptedException {	
-	
 	//Click vao Myaccount
 	//Dựa vào kỹ thuật NODE cha nối tiếp node con
     driver.findElement(By.xpath("//div[@class='footer']//a[@title='My Account']")).click();
-	
 	}
 	
-
 	@Test
 	public void TC_03_Xpath() throws InterruptedException {	
 	//Kỹ thuật Xpath Axes
-		
     driver.get("http://live.demoguru99.com/index.php/mobile.html");
     Thread.sleep(2000);
     //Click vào đúng button của Iphone Add to cart
     driver.findElement(By.xpath("//a[@title='IPhone']/parent::h2/following-sibling::div[@class='actions']//button")).click();
-	
 	}
 	
 	@AfterClass//Post-codition
