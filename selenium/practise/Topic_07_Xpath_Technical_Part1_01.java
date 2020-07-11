@@ -1,4 +1,4 @@
-package webdriver;
+package practise;
 
 import java.util.concurrent.TimeUnit;
 
@@ -9,7 +9,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Topic_07_Xpath_Technical_01 {
+public class Topic_07_Xpath_Technical_Part1_01 {
 
 	WebDriver driver;
 	@BeforeClass
