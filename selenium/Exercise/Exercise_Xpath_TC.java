@@ -91,6 +91,26 @@ public class Exercise_Xpath_TC {
 	}
 
 	@Test
+	public void TC_05_Login_with_valid_Emailpassword() throws InterruptedException {
+		driver.get("http://live.demoguru99.com/index.php");
+		driver.findElement(By.xpath("//div[@class='footer']//a[@title='My Account']")).click();
+		driver.findElement(By.className("validate-email")).sendKeys("automation_13@gmail.com");
+		driver.findElement(By.name("login[password]")).sendKeys("123123");
+		driver.findElement(By.xpath("//button[@title='Login']")).click();
+
+		// Verify các field cần được verify
+		driver.findElement(By.xpath("//h1[text()='My Dashboard']")).isDisplayed();
+		driver.findElement(By.xpath("//strong[text()='Hello, Automation Testing!']")).isDisplayed();
+		driver.findElement(By.xpath("//div[@class='box-content']//p[contains(text(),'Automation')]")).isDisplayed();
+		driver.findElement(By.xpath("//div[@class='box-content']//p[contains(.,'@gmail.com')]")).isDisplayed();
+
+		// Click account then click log out
+		driver.findElement(By.xpath("//div[@class='skip-links']//span[text()='Account']")).click();
+		driver.findElement(By.xpath("//div[@id='header-account']//li[last()]/a")).click();
+
+	}
+
+	@Test
 	public void TC_06_Create_an_account() {
 
 		// Open brower/Điền thông tin/Click đăng kí
