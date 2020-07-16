@@ -151,6 +151,7 @@ public class Exercise_Xpath_TC {
 
 	@AfterClass // Post-codition
 	public void afterClass() {
+		System.out.println("Finish_TC_Project");
 		driver.quit();
 	}
 }
