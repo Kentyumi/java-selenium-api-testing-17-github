@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -22,19 +23,12 @@ public class Topic_00_Templet {
 	}
 
 	@Test
-	public void TC_01_() {
-		driver.get("");
+	public void TC_01_() throws InterruptedException {
 	}
 
 	@Test
 	public void TC_02_() {
 
-	}
-
-	@Test
-	public void TC_03_LoginFormDisplayed() {
-// Login form displayed
-		Assert.assertTrue(driver.findElement(By.xpath("//form[@name='frmLogin']")).isDisplayed());
 	}
 
 	@AfterClass
