@@ -171,6 +171,7 @@ public class Exercise_element {
 		}
 	}
 
+	
 	@AfterClass
 	public void afterClass() {
 		driver.quit();
