@@ -9,7 +9,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Topic_06_Xpath_Css_locater {
+public class Topic_05_Xpath_Css_locater {
 
 	// Khai báo biến driver(instance: thể hiện/đại diện)
 	WebDriver driver;

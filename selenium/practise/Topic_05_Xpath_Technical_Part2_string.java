@@ -1,6 +1,6 @@
 package practise;
 
-public class Topic_08_Xpath_Technical_Part2_string {
+public class Topic_05_Xpath_Technical_Part2_string {
 
 	public static void main(String[] args) {
        String name = "Selenium Webdrive API";
