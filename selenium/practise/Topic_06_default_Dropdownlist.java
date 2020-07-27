@@ -2,6 +2,7 @@ package practise;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -26,7 +27,7 @@ public class Topic_06_default_Dropdownlist {
 
 	}
 
-	@Test
+	 @Test
 	public void TC_01_Single() {
 		driver.get("https://www.facebook.com/");
 
@@ -137,7 +138,7 @@ public class Topic_06_default_Dropdownlist {
 		Assert.assertEquals(actualItem, expectedItem);
 	}
 
-	@Test
+	 @Test
 	public void TC_02_Multiple() {
 		driver.get("https://automationfc.github.io/basic-form/index.html");
 
@@ -170,15 +171,66 @@ public class Topic_06_default_Dropdownlist {
 
 	}
 
+	@Test
 	public void TC_03_HTML_Dropdownlist() {
+		String email = "quochung" + randomNumber() + "@gmail.com";
+
 		// Step 1: Truy cập vào trang
 		driver.get("https://demo.nopcommerce.com/register");
 
-		// Step 2 : Click register
-        driver.findElement(By.id("register-button"));
-        
-        // Step 3: Input các thông tin hợp lệ vào form
-        
+		// Step 2 : Click register link
+		driver.findElement(By.className("ico-register"));
+
+		// Step 3: Input các thông tin hợp lệ vào form
+
+		// chọn day = 1
+		select = new Select(driver.findElement(By.name("DateOfBirthDay")));
+		select.selectByVisibleText("1");
+
+		// Kiểm tra dropdown day có 32 items
+		List<WebElement> selectOptionElement = select.getOptions();
+		int optionSelected = selectOptionElement.size();
+		Assert.assertEquals(optionSelected, 32);
+
+		// Chọn Month = May
+		select = new Select(driver.findElement(By.name("DateOfBirthMonth")));
+		select.selectByVisibleText("May");
+
+		// Kiểm tra dropdown month có 13 items
+		List<WebElement> selectOptionElementMonth = select.getOptions();
+		int optionSelectedMonth = selectOptionElementMonth.size();
+		Assert.assertEquals(optionSelectedMonth, 13);
+
+		// Chọn Year = 1980
+		select = new Select(driver.findElement(By.name("DateOfBirthYear")));
+		select.selectByVisibleText("1980");
+
+		// Kiểm tra dropdown year có 112 items
+		List<WebElement> selectOptionElementYear = select.getOptions();
+		int optionSelectedYear = selectOptionElementYear.size();
+		Assert.assertEquals(optionSelectedYear, 112);
+
+		// Input các data còn lại
+		driver.findElement(By.id("gender-male")).click();
+		driver.findElement(By.id("FirstName")).sendKeys("John");
+		driver.findElement(By.id("LastName")).sendKeys("Wick");
+		driver.findElement(By.id("Email")).sendKeys(email);
+		driver.findElement(By.id("Company")).sendKeys("AutomationFC");
+		driver.findElement(By.id("Password")).sendKeys("552912");
+		driver.findElement(By.id("ConfirmPassword")).sendKeys("552912");
+
+		// Click register
+		driver.findElement(By.id("register-button")).click();
+
+		// Verify register successfull
+		Assert.assertTrue(driver.findElement(By.className("ico-account")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.className("ico-logout")).isDisplayed());
+		Assert.assertEquals(driver.findElement(By.className("result")).getText(),"Your registration completed");
+	}
+
+	public static int randomNumber() {
+		Random rand = new Random();
+		return rand.nextInt(999);
 	}
 
 	public void sleepInSecond(long time) {
@@ -188,6 +240,7 @@ public class Topic_06_default_Dropdownlist {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+
 	}
 
 	@AfterClass
