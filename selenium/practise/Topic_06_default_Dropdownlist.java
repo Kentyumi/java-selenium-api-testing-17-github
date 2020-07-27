@@ -27,7 +27,7 @@ public class Topic_06_default_Dropdownlist {
 
 	}
 
-	 @Test
+	@Test
 	public void TC_01_Single() {
 		driver.get("https://www.facebook.com/");
 
@@ -138,7 +138,7 @@ public class Topic_06_default_Dropdownlist {
 		Assert.assertEquals(actualItem, expectedItem);
 	}
 
-	 @Test
+	@Test
 	public void TC_02_Multiple() {
 		driver.get("https://automationfc.github.io/basic-form/index.html");
 
@@ -225,7 +225,7 @@ public class Topic_06_default_Dropdownlist {
 		// Verify register successfull
 		Assert.assertTrue(driver.findElement(By.className("ico-account")).isDisplayed());
 		Assert.assertTrue(driver.findElement(By.className("ico-logout")).isDisplayed());
-		Assert.assertEquals(driver.findElement(By.className("result")).getText(),"Your registration completed");
+		Assert.assertEquals(driver.findElement(By.className("result")).getText(), "Your registration completed");
 	}
 
 	public static int randomNumber() {
