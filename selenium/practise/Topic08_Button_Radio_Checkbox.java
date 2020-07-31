@@ -1,5 +1,6 @@
 package practise;
 
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -22,7 +23,7 @@ public class Topic08_Button_Radio_Checkbox {
     By firstCheckBox = By.xpath("//input[@value='Anemia']");
 	By secondCheckBox = By.xpath("//input[@value='Asthma']");
 	By thirthCheckBox = By.xpath("//input[@value='Arthritis']");
-    
+    By allCheckboxes = By.xpath("//input[@type='checkbox']");
 	// Radio button
 	By firstRadio= By.xpath("//input[@value='3-4 days']");
 	By secondRadio = By.xpath("//input[@value='I have a strict diet']");
@@ -50,7 +51,7 @@ public class Topic08_Button_Radio_Checkbox {
 
 	}
 
-	@Test
+	//@Test
 	public void TC_01_Button() throws InterruptedException {
 		driver.get("https://www.fahasa.com/customer/account/create?attempt=1");
 		
@@ -105,8 +106,8 @@ public class Topic08_Button_Radio_Checkbox {
 		
 		
 	}
-	@Test
-	public void TC_02_Default_Radio_Checkbox() {
+	//@Test
+	public void TC_02_Default_Radio_Checkbox() throws InterruptedException {
 		driver.get("https://automationfc.github.io/multiple-fields/");
 		
 		// Kiểm tra 3 checkbox đầu tiên + 2 radio button deselected
@@ -133,8 +134,46 @@ public class Topic08_Button_Radio_Checkbox {
 		
 		Assert.assertTrue(driver.findElement(firstRadio).isSelected());
 		Assert.assertTrue(driver.findElement(secondRadio).isSelected());
-	}
+	    driver.navigate().refresh();
 
+        // Click tất cả Checkbox
+	    List<WebElement> checkBoxes = driver.findElements(allCheckboxes);
+	    for (WebElement checkbox: checkBoxes) {
+	    	checkbox.click();
+	    	Thread.sleep(500);
+	    }
+	    for (WebElement checkbox: checkBoxes) {
+	    Assert.assertTrue(checkbox.isSelected());
+	    }
+	    for (WebElement checkbox: checkBoxes) {
+	    	checkbox.click();
+	    	Thread.sleep(500);
+	    }
+	    for (WebElement checkbox: checkBoxes) {
+		    Assert.assertFalse(checkbox.isSelected());
+		    }
+	
+	}
+	
+	@Test
+	public void TC_03_Custom_Radio_Checkbox() throws InterruptedException {
+		driver.get("https://material.angular.io/components/checkbox/examples");
+		
+		By checkedCheckbox = By.xpath("//span[contains(text(),'Checked')]/preceding-sibling::div/input");
+		
+		// Click by input
+		clickByJavascript(driver.findElement(checkedCheckbox));
+	    SleepInSecond(5);
+		// Verify 
+		Assert.assertTrue(driver.findElement(checkedCheckbox).isSelected());
+		
+		
+	}
+	
+	public void clickByJavascript(WebElement element) {
+		jsExecutor.executeScript("arguments[0].click();",element);
+	}
+	
 	public void SleepInSecond(long time) {
 		try {
 			Thread.sleep(time*1000);
