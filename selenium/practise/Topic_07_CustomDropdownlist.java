@@ -34,7 +34,7 @@ public class Topic_07_CustomDropdownlist {
 
 	}
 
-	@Test
+	//@Test
 	public void TC_01_Jquery() {
 
         driver.get("https://jqueryui.com/resources/demos/selectmenu/default.html");
@@ -53,7 +53,7 @@ public class Topic_07_CustomDropdownlist {
 
 	}
 	
-   @Test
+  // @Test
 	public void TC_02_Angular() throws InterruptedException {
 		driver.get("https://ej2.syncfusion.com/angular/demos/?_ga=2.262049992.437420821.1575083417-524628264.1575083417#/material/drop-down-list/data-binding");
 	
@@ -78,16 +78,16 @@ public class Topic_07_CustomDropdownlist {
         selectItemInDropdown("//i[@class='dropdown icon']",
 				"//span[@class='text']", 
 				"Jenny Hess");
-        Assert.assertTrue(driver.findElement(By.xpath("//div[@role='listbox']/div[@class='text' and text()='Jenny Hess']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//div[@role='listbox']/div[@class='divider text' and text()='Jenny Hess']")).isDisplayed());
         	
         selectItemInDropdown("//i[@class='dropdown icon']",
 				"//span[@class='text']", 
 				"Stevie Feliciano");
-        Assert.assertTrue(driver.findElement(By.xpath("//div[@role='listbox']/div[@class='text' and text()='Stevie Feliciano']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//div[@role='listbox']/div[@class='divider text' and text()='Stevie Feliciano']")).isDisplayed());
         	
     	}
 
-    @Test
+   // @Test
 	public void TC_04_Editable() throws InterruptedException {
     	driver.get("http://indrimuska.github.io/jquery-editable-select/");
     	sendkeyToEditDropdown("//div[@id='default-place']/input", "Audi");
@@ -99,7 +99,7 @@ public class Topic_07_CustomDropdownlist {
     	
 	}
     
-    @Test
+    //@Test
 	public void TC_05_Advanced() throws InterruptedException {
     	driver.get("http://multiple-select.wenzhixin.net.cn/examples#basic.html");
     	driver.switchTo().frame(driver.findElement(By.tagName("iframe")));
