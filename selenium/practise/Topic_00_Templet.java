@@ -23,7 +23,7 @@ public class Topic_00_Templet {
 	}
 
 	@Test
-	public void TC_01_() throws InterruptedException {
+	public void TC_01_() {
 	}
 
 	@Test
