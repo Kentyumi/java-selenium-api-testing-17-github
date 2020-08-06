@@ -9,7 +9,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -34,12 +33,12 @@ public class Topic08_Button_Radio_Checkbox {
 	public void beforeClass() {
 		
 		// Absolute path
-		System.setProperty("webdriver.chrome.driver",
-				"E:\\Kent\\Automation\\02-Selenium API Github\\java-selenium-api-testing-17-github\\browserDriver\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver",
+				//"E:\\Kent\\Automation\\02-Selenium API Github\\java-selenium-api-testing-17-github\\browserDriver\\chromedriver.exe");
 		
 		// Relative path ( Cach 1)
-		//System.setProperty("webdriver.chrome.driver",
-		//		".\\browserDriver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver",
+				".\\browserDriver\\chromedriver.exe");
 		
 		// Relative path ( Cach 2)
 		//System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") +
@@ -51,7 +50,7 @@ public class Topic08_Button_Radio_Checkbox {
 
 	}
 
-	//@Test
+	@Test
 	public void TC_01_Button() throws InterruptedException {
 		driver.get("https://www.fahasa.com/customer/account/create?attempt=1");
 		
@@ -106,7 +105,7 @@ public class Topic08_Button_Radio_Checkbox {
 		
 		
 	}
-	//@Test
+	@Test
 	public void TC_02_Default_Radio_Checkbox() throws InterruptedException {
 		driver.get("https://automationfc.github.io/multiple-fields/");
 		

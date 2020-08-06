@@ -4,8 +4,5 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="Lib/selenium-server-standalone-2.53.1.jar" sourcepath="Lib/selenium-java-2.53.1-srcs.jar"/>
 	<classpathentry kind="lib" path="Lib/selenium-java-2.53.1-srcs.jar"/>
-	<classpathentry kind="lib" path="browserDriver/chromedriver.exe"/>
-	<classpathentry kind="lib" path="autoITScript/authen_chrome.exe"/>
-	<classpathentry kind="lib" path="autoITScript/authen_firefox.exe"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

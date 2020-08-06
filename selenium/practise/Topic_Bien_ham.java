@@ -4,7 +4,6 @@ public class Topic_Bien_ham {
 	// Biến = thuộc tính = Field
 	// Biến toàn cục(global) = sử dụng trong toàn bộ class
 	private String fullName = "Nguyễn Ngọc Bảo Hân";
-	private String address = "156 Hùng Vương";
 
 	// Hàm = phương thức = Method/Function
 	// Biến cục bộ (local): chỉ sử dụng trong Method
