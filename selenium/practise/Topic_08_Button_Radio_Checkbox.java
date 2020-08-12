@@ -14,7 +14,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Topic08_Button_Radio_Checkbox {
+public class Topic_08_Button_Radio_Checkbox {
 	WebDriver driver;
     JavascriptExecutor jsExecutor;
 	

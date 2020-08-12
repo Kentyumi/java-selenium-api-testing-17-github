@@ -1,6 +1,6 @@
 package practise;
 
-public class Topic07_operator {
+public class Topic_07_operator {
 
 	public static void main(String[] args) {
     int number = 10;

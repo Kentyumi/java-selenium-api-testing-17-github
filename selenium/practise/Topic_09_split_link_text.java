@@ -1,6 +1,6 @@
 package practise;
 
-public class Topic09_split_link_text {
+public class Topic_09_split_link_text {
 
 	public static void main(String[] args) {
 		String linkText = "http://the-internet.herokuapp.com/basic_auth";

@@ -8,7 +8,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Topic_00_Templet {
+public class Topic_15_Wait_Part2_Find_Element_Impicitwait {
 	WebDriver driver;
 
 	@BeforeClass
@@ -20,19 +20,15 @@ public class Topic_00_Templet {
 
 	}
 
+
 	@Test
-	public void TC_01() {
+	public void TC_01_Find_Element() {
 
 	
 	}
 	
 	@Test
-	public void TC_02() {
-
-	}
-
-	@Test
-	public void TC_Exercise_TC03() {
+	public void TC_02_Find_Elements() {
 
 	}
 
