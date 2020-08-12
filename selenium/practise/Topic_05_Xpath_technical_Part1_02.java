@@ -23,14 +23,14 @@ public class Topic_05_Xpath_technical_Part1_02 {
 	
 	@Test
 	public void TC_01_Xpath() throws InterruptedException {	
-	//Click vao Myaccount
+	//Click vao My account
 	//Case này sẽ failed vì định danh có 2 matching nodes
     driver.findElement(By.xpath("a[@title='My Account']")).click();
 	}
 	
 	@Test
 	public void TC_02_Xpath() throws InterruptedException {	
-	//Click vao Myaccount
+	//Click vao My account
 	//Dựa vào kỹ thuật NODE cha nối tiếp node con
     driver.findElement(By.xpath("//div[@class='footer']//a[@title='My Account']")).click();
 	}
