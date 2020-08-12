@@ -1,4 +1,4 @@
-package practise;
+	package practise;
 
 import java.awt.AWTException;
 import java.awt.Robot;
